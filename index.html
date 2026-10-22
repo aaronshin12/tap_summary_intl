@@ -415,20 +415,44 @@ body.deck-ready .screen>.m-hero,body.deck-ready .screen>.sec{height:100svh!impor
 body.deck-ready .screen>.m-hero::-webkit-scrollbar,body.deck-ready .screen>.sec::-webkit-scrollbar{display:none}
 .chapter-transition-clone{position:fixed!important;z-index:1000;top:0;bottom:auto;left:50%;width:min(100%,480px)!important;height:100svh!important;min-height:100svh!important;max-height:100svh!important;margin:0!important;transform:translateX(-50%)!important;opacity:1!important;overflow:hidden!important;pointer-events:auto;clip-path:inset(0 0 0 0);transition:clip-path .95s cubic-bezier(.76,0,.24,1),opacity .7s ease!important}
 .chapter-transition-clone.is-leaving{clip-path:inset(0 0 100% 0 round 0 0 36px 36px);opacity:.98!important}
+/* ---- integrated gateway + shared editorial glass cards ---- */
+.entry-gate{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(28px,6vh,54px) 24px}
+.entry-brand{align-self:center;width:min(88vw,440px);gap:clamp(14px,2.5vh,22px);padding-bottom:54px}
+.entry-brand h2{font-size:clamp(29px,7.5vw,46px);line-height:1.02}
+.entry-brand .kgrid{width:100%;margin-top:4px;text-align:left}
+.entry-brand .kgrid>div{min-height:94px;padding:14px 15px}
+.entry-brand .kgrid b{font-size:clamp(25px,7vw,34px)}
+.entry-brand .kgrid span{font-size:10px;line-height:1.25}
+.entry-action{position:absolute;left:50%;bottom:max(26px,env(safe-area-inset-bottom));align-self:auto;margin:0;translate:-50% 0}
+.kgrid>div,.case,.lprow{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.kgrid>div:hover,.case:hover,.lprow:hover,.lprow[aria-expanded=true]{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.kgrid b,.case .cl,.case b,.lprow .tx b{color:#fff}
+.kgrid .ki,.lprow .chev{color:#fff}
+.kgrid span,.case span{color:rgba(255,255,255,.7)}
+.lprow .ds{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:rgba(255,255,255,.72)}
+.lprow .lgbox{min-height:38px;padding:6px 8px;border-radius:12px;background:#fff}
+/* ---- continuous single-page experience ---- */
+html{scroll-snap-type:none}
+body{background:linear-gradient(155deg,#0e2a5c 0%,#0b5cc0 62%,#347fdc 100%)}
+.screen{min-height:100svh;overflow:visible!important}
+.site-hero{position:relative;display:flex;align-items:center;justify-content:center;min-height:100svh;padding:clamp(42px,8vh,76px) 24px;color:#fff;overflow:hidden;isolation:isolate}
+.site-hero:before{content:"";position:absolute;z-index:-1;left:-25vw;bottom:-35vw;width:95vw;height:95vw;border-radius:42% 58% 63% 37% / 48% 39% 61% 52%;background:radial-gradient(circle at 62% 34%,rgba(115,179,255,.55),rgba(75,143,229,.12) 57%,transparent 59%);animation:entryBlob 10s ease-in-out infinite alternate}
+.site-hero:after{content:"";position:absolute;z-index:-1;right:-25vw;top:-31vw;width:78vw;height:78vw;border:1px solid rgba(255,255,255,.19);border-radius:50%;box-shadow:0 0 0 7vw rgba(255,255,255,.025),0 0 0 14vw rgba(255,255,255,.018);animation:entryOrbit 13s linear infinite}
+.site-hero .entry-brand{padding-bottom:0}
+.screen>.sec{height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;padding:clamp(62px,10vh,96px) 28px 76px;border-top:1px solid rgba(255,255,255,.13)}
+.screen>.sec .chapter-art{height:clamp(210px,58vw,278px);min-height:0;flex-basis:auto;margin-bottom:32px}
+.entry-action,.chapter-nav,.chapter-progress,.deck-continue{display:none!important}
 @media(max-width:520px){.chapter-nav{left:7px}.chapter-progress{left:10px}.sec{padding-left:24px;padding-right:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.m-hero,.organic-reveal,.organic-reveal .case,.organic-reveal .lprow,.organic-reveal .wl li,.entry-gate:before,.entry-gate:after,.entry-brand,.entry-action,.entry-cue:after,.chapter-art>svg,.chapter-art>.provided-art,.chapter-continue:after,.deck-continue:after{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}.chapter-transition-clone{transform:translateX(-50%)!important;transition:none!important}}
 </style>
 </head>
-<body class="entry-locked">
-<div class="entry-gate" data-entry-gate role="dialog" aria-modal="true" aria-label="TAP Angel Partners">
-  <div></div>
-  <div class="entry-brand"><img data-logo="TAP" data-w="116" data-h="52" alt="TAP Angel Partners"><h2>Your gateway to Korea's deep‑tech startups.</h2></div>
-  <button class="entry-action" type="button" data-entry-action><span class="tap">TAP TO CONTINUE</span><span class="swipe">SWIPE TO CONTINUE</span><i class="entry-cue" aria-hidden="true"></i></button>
-</div>
-<noscript><style>.entry-gate{display:none}body.entry-locked{overflow:auto;touch-action:auto}</style></noscript>
+<body>
 <div class="screen" data-screen>
-      <div class="m-hero hc"><figure class="chapter-art chapter-art--gateway" aria-hidden="true"><div class="provided-art"></div></figure><div class="hrow"><h3 data-i="hero"></h3></div>
-        <div class="kgrid"><div><div class="kr"><b data-usd="75000000000"></b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16v-4M12 16V8M17 16V5"/></svg></i></div><span data-i="kAum"></span></div><div><div class="kr"><b>77</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg></i></div><span data-i="kPort"></span></div><div><div class="kr"><b>189</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 3h5M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg></i></div><span data-i="kPoc"></span></div><div><div class="kr"><b>60+</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></i></div><span data-i="kGlobal"></span></div></div></div>
+<section class="site-hero" aria-label="TAP Angel Partners">
+  <div class="entry-brand"><img data-logo="TAP" data-w="116" data-h="52" alt="TAP Angel Partners"><h2>Your gateway to Korea's deep‑tech startups.</h2>
+    <div class="kgrid"><div><div class="kr"><b data-usd="75000000000"></b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16v-4M12 16V8M17 16V5"/></svg></i></div><span data-i="kAum"></span></div><div><div class="kr"><b>77</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg></i></div><span data-i="kPort"></span></div><div><div class="kr"><b>189</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 3h5M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg></i></div><span data-i="kPoc"></span></div><div><div class="kr"><b>60+</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></i></div><span data-i="kGlobal"></span></div></div>
+  </div>
+  </section>
       <div class="sec c"><figure class="chapter-art chapter-art--backed" aria-hidden="true"><div class="provided-art"></div></figure><div class="eyw"><i class="ei" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg></i><div class="ey" data-i="backedEy"></div></div><h4 data-i="backedH"></h4>
         <div class="lplist" data-lplist></div></div>
       <div class="sec c"><figure class="chapter-art chapter-art--scale" aria-hidden="true"><div class="provided-art"></div></figure><div class="eyw"><i class="ei" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i><div class="ey" data-i="scaleEy"></div></div><div class="cases" data-cases></div><p class="portfolio-more">and 70+ more startups run with us</p><p class="s" data-i="valNote"></p></div>
@@ -614,7 +638,7 @@ function initChapterNavigation(){
 }
 function initOrganicExperience(){
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const targets=[...document.querySelectorAll('.m-hero,.sec,.fine')];
+  const targets=[...document.querySelectorAll('.site-hero,.sec,.fine')];
   targets.forEach(el=>{
     el.classList.add('organic-reveal');
     el.querySelectorAll('.case,.lprow,.wl li').forEach((item,index)=>item.style.setProperty('--organic-index',index));
@@ -640,7 +664,7 @@ function initOrganicExperience(){
     addEventListener('scroll',sync,{passive:true});sync();
   }
 }
-sizeStatic();buildOnce();render();initEntryGate();initChapterNavigation();initOrganicExperience();
+sizeStatic();buildOnce();render();initOrganicExperience();
 </script>
 </body>
 </html>
