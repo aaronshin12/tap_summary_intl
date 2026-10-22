@@ -435,9 +435,10 @@ body.deck-ready .screen>.m-hero::-webkit-scrollbar,body.deck-ready .screen>.sec:
 html{scroll-snap-type:none}
 body{background:#0e2a5c}
 .screen{min-height:100svh;overflow:visible!important;background:linear-gradient(180deg,#0e2a5c 0%,#0b4f9f 28%,#0b5cc0 52%,#347fdc 76%,#0e2a5c 100%)!important;background-repeat:no-repeat!important;background-size:100% 100%!important}
-.site-hero{position:relative;display:flex;align-items:center;justify-content:center;min-height:0;padding:28px 24px 30px;color:#fff;overflow:hidden;isolation:isolate}
+.site-hero{position:relative;display:flex;align-items:center;justify-content:center;min-height:0;padding:200px 24px 30px;color:#fff;overflow:hidden;isolation:isolate}
 .site-hero:before,.site-hero:after{display:none}
 .site-hero .entry-brand{padding-bottom:0}
+.site-hero .entry-brand h2{width:100%;text-align:left}
 .m-hero,.screen>.sec,.fine{background:transparent!important}
 .screen>.sec{height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;padding:6px 28px 22px;border-top:0}
 .screen>.sec .chapter-art{height:clamp(148px,42vw,188px);min-height:0;flex-basis:auto;margin-bottom:8px}
@@ -451,28 +452,31 @@ body{background:#0e2a5c}
 .sec:has([data-i=scaleEy])>.portfolio-more{margin:7px 0 20px;padding:0;border:0;color:rgba(255,255,255,.76);font-size:16px;line-height:1.25;letter-spacing:-.02em}
 .sec:has([data-i=scaleEy])>.cases{margin-top:0}
 .fab a,.fab a.o{background:#fff;color:var(--navy);border:1px solid rgba(255,255,255,.88);box-shadow:0 8px 24px rgba(3,22,52,.2)}
-.lprow{border-color:rgba(14,42,92,.08);background:#fff;box-shadow:0 8px 22px rgba(3,22,52,.1);backdrop-filter:none;-webkit-backdrop-filter:none}
-.lprow:hover,.lprow[aria-expanded=true]{border-color:rgba(14,42,92,.15);background:#fff;box-shadow:0 10px 26px rgba(3,22,52,.14)}
-.lprow .tx b{color:var(--navy)}
-.lprow .chev{color:var(--blue)}
-.lprow .ds{border-color:rgba(14,42,92,.07);background:#f6f8fb;color:var(--sub)}
+.lprow{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lprow:hover,.lprow[aria-expanded=true]{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.lprow .tx b{color:#fff}
+.lprow .chev{color:#fff}
+.lprow .ds{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:rgba(255,255,255,.72)}
+.lprow .lgbox{background:#fff;border-radius:12px}
 /* ---- compact split section headers ---- */
 .screen>.sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(112px,38%);column-gap:14px;align-items:center}
-.screen>.sec>.chapter-art{grid-column:2;grid-row:1/span 2;width:100%;height:clamp(116px,34vw,150px);margin:0;align-self:center}
-.screen>.sec>.chapter-art>.provided-art{background-size:112% auto}
-.screen>.sec>h4{grid-column:1;grid-row:1/span 2;margin:0;font-size:clamp(29px,7.6vw,39px)}
+.screen>.sec:before{content:"";position:absolute;top:0;left:15%;width:70%;height:1px;background:#78b4ff;box-shadow:0 0 12px rgba(120,180,255,.28)}
+.screen>.sec>.chapter-art{grid-column:2;grid-row:1/span 2;width:100%;height:clamp(116px,34vw,150px);margin:0;align-self:start;overflow:visible}
+.screen>.sec>.chapter-art>.provided-art{background-size:contain}
+.screen>.sec>h4{grid-column:1;grid-row:1/span 2;align-self:start;margin:0;font-size:clamp(29px,7.6vw,39px)}
+.screen>.sec>h4:after,.screen>.sec:has([data-i=scaleEy])>.eyw .ey:after,.screen>.sec:has([data-i=workEy])>.c>.eyw .ey:after{content:"";display:block;width:52px;height:3px;margin-top:14px;border-radius:99px;background:linear-gradient(90deg,#78b4ff,rgba(120,180,255,.18))}
 .screen>.sec>.lplist{grid-column:1/-1;grid-row:3;margin-top:18px}
-.screen>.sec:has([data-i=scaleEy])>.eyw{grid-column:1;grid-row:1;align-self:end;width:100%;min-width:0}
+.screen>.sec:has([data-i=scaleEy])>.eyw{grid-column:1;grid-row:1;align-self:start;width:100%;min-width:0}
 .screen>.sec:has([data-i=scaleEy])>.eyw .ey{width:100%;max-width:100%;min-width:0;font-size:clamp(29px,7.6vw,39px)}
 .screen>.sec:has([data-i=scaleEy])>.portfolio-more{grid-column:1;grid-row:2;align-self:start;margin:6px 0 0;font-size:14px;text-align:left}
 .screen>.sec:has([data-i=scaleEy])>.cases{grid-column:1/-1;grid-row:3;margin-top:18px}
 .screen>.sec:has([data-i=scaleEy])>.s{grid-column:1/-1;grid-row:4}
 .screen>.sec:has([data-i=globalEy])>.eyw{grid-column:1;grid-row:1;align-self:end}
-.screen>.sec:has([data-i=globalEy])>h4{grid-column:1;grid-row:2;align-self:start;margin-top:7px}
+.screen>.sec:has([data-i=globalEy])>h4{grid-column:1;grid-row:1/span 2;align-self:start;margin-top:0}
 .screen>.sec:has([data-i=globalEy])>.gpgrid{grid-column:1/-1;grid-row:3;margin-top:18px}
 .screen>.sec:has([data-i=globalEy])>.more{grid-column:1/-1;grid-row:4}
 .screen>.sec:has([data-i=globalEy])>.morepanel{grid-column:1/-1;grid-row:5}
-.screen>.sec:has([data-i=workEy])>.c{grid-column:1;grid-row:1/span 2;align-self:center;width:100%;min-width:0}
+.screen>.sec:has([data-i=workEy])>.c{grid-column:1;grid-row:1/span 2;align-self:start;width:100%;min-width:0}
 .screen>.sec:has([data-i=workEy])>.c>.eyw{width:100%;min-width:0}
 .screen>.sec:has([data-i=workEy])>.c>.eyw .ey{width:100%;max-width:100%;min-width:0;font-size:clamp(29px,7.6vw,39px)}
 .screen>.sec:has([data-i=workEy])>.wl{grid-column:1/-1;grid-row:3;margin-top:18px}
@@ -519,11 +523,11 @@ const T={
   workEy:'Work with us',workH:'How can we work together?',
   b1:'Co-invest in Korea',b1s:'Deal flow from 77 portfolio companies and our TIPS pipeline',
   b2:'Land in Korea',b2s:'PoCs with 150+ corporates and soft-landing support in Korea',
-  b3:'Partner on programs',b3s:'Join TAP G-Alliance — 60+ partners worldwide',
+  b3:'Partner on programs',b3s:'Join 60+ partners worldwide',
   kAum:'AUM',kFollow:'Portfolio raised follow-on',kAlumni:'Alumni follow-on (3 yrs)',kPort:'Portfolio companies',kPoc:'Corporate PoCs',kGlobal:'Global partners',
   backedEy:'',backedH:'Government fund-of-funds and leading Korean corporates',backedS:'Tap a logo for details.',
   scaleEy:'Scale-up Track record',valNote:'Valuation at latest financing round.',
-  globalEy:'TAP G-Alliance',globalH:'60+ investors and innovation partners in all regions',
+  globalEy:'',globalH:'60+ investors and innovation partners in all regions',
   oiEy:'Open innovation',oiH:'189 corporate PoCs with 150+ partners',
   oi1:'<b>Hyundai Motor Group</b> — ZER01NE accelerator tracks',oi2:'<b>CJ ENM, LS Electric</b> — corporate open-innovation funds',oi3:'<b>Korea Tourism Organization</b> — 20 corporates, 29 PoCs in 2026',
   moreOpen:'View all 60+ partners by region',moreClose:'Show less',tInv:'Invest',tOi:'Open innovation',tNet:'Network',rAsia:'Asia',rNa:'N. America',rEu:'Europe',rMe:'Middle East',
