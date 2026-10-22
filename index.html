@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0E2A5C">
 <style>
+@font-face{font-family:'Bebas Neue';src:url('assets/fonts/BebasNeue-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
 :root{--blue:#0B5CC0;--navy:#0E2A5C;--ink:#14213D;--sub:#5B6475;--line:#E3E7EE;--tint:#EEF3FB;--canvas:#D9DEE6;--acc:#E8590C}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--canvas);font-family:'Freesentation','Pretendard','Malgun Gothic','Noto Sans CJK KR',system-ui,sans-serif;color:var(--ink);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
@@ -459,6 +460,27 @@ body{background:#0e2a5c}
 .lprow .chev{color:#fff}
 .lprow .ds{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:rgba(255,255,255,.72)}
 .lprow .lgbox{height:40px;min-height:40px;padding:6px 8px;align-items:center;justify-content:center;background:#fff;border-radius:12px;box-sizing:border-box}
+.lprow .hd{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px 12px}
+.lprow .tx{grid-column:1;grid-row:1}
+.lprow .tx b{font-size:14px;line-height:1.25;white-space:nowrap}
+.lprow .lgbox{grid-column:1/-1;grid-row:2;justify-self:end;width:104px;flex:none}
+.lprow .lgbox img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.lprow .chev{grid-column:2;grid-row:1}
+.title-emphasis{color:#fff}
+.title-muted{color:rgba(255,255,255,.5)}
+.site-hero .entry-brand h2 .title-muted,.site-hero .entry-brand h2 .title-emphasis{display:inline}
+.case .cl{height:36px;padding:6px 8px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:10px;box-sizing:border-box;overflow:hidden}
+.case .cl img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.site-footer{padding:56px 28px 112px;text-align:center;color:rgba(255,255,255,.58);font-size:10px;line-height:1.55}
+.site-footer p{max-width:390px;margin:0 auto 8px}
+.site-footer .copyright{margin-top:20px;color:rgba(255,255,255,.82);font-weight:800;letter-spacing:.01em}
+.chapter-art--backed>.provided-art{background-image:url("assets/chapter-art-v2/backed.webp")}
+.chapter-art--scale>.provided-art{background-image:url("assets/chapter-art-v2/scale.webp")}
+.chapter-art--global>.provided-art{background-image:url("assets/chapter-art-v2/global.webp")}
+.chapter-art--work>.provided-art{background-image:url("assets/chapter-art-v2/work.webp")}
+.site-hero .entry-brand h2,.screen>.sec>h4,.screen>.sec:has([data-i=scaleEy])>.eyw .ey,.screen>.sec:has([data-i=workEy])>.c>.eyw .ey,.kgrid b,.case b{font-family:'Bebas Neue','Freesentation','Pretendard',system-ui,sans-serif;font-weight:400;letter-spacing:.015em}
+.kgrid b{font-size:clamp(30px,8vw,40px)}
+.case b{font-size:22px}
 /* ---- compact split section headers ---- */
 .screen>.sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(112px,38%);column-gap:14px;align-items:center}
 .screen>.sec:before{content:"";position:absolute;top:12px;left:15%;width:70%;height:1px;background:rgba(190,199,211,.58);box-shadow:none}
@@ -490,13 +512,13 @@ body{background:#0e2a5c}
 <body>
 <div class="screen" data-screen>
 <section class="site-hero" aria-label="TAP Angel Partners">
-  <div class="entry-brand"><img data-logo="TAP" data-w="116" data-h="52" alt="TAP Angel Partners"><h2>Your gateway to Korea's deep‑tech startups.</h2>
+  <div class="entry-brand"><img data-logo="TAP" data-w="116" data-h="52" alt="TAP Angel Partners"><h2><span class="title-muted">Your gateway to Korea's</span> <span class="title-emphasis">deep‑tech startups.</span></h2>
     <div class="kgrid"><div><div class="kr"><b data-usd="75000000000"></b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16v-4M12 16V8M17 16V5"/></svg></i></div><span data-i="kAum"></span></div><div><div class="kr"><b>77</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg></i></div><span data-i="kPort"></span></div><div><div class="kr"><b>189</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 3h5M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg></i></div><span data-i="kPoc"></span></div><div><div class="kr"><b>60+</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></i></div><span data-i="kGlobal"></span></div></div>
   </div>
   </section>
       <div class="sec c"><figure class="chapter-art chapter-art--backed" aria-hidden="true"><div class="provided-art"></div></figure><div class="eyw"><i class="ei" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg></i><div class="ey" data-i="backedEy"></div></div><h4 data-i="backedH"></h4>
         <div class="lplist" data-lplist></div></div>
-      <div class="sec c"><figure class="chapter-art chapter-art--scale" aria-hidden="true"><div class="provided-art"></div></figure><div class="eyw"><i class="ei" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i><div class="ey" data-i="scaleEy"></div></div><p class="portfolio-more">and 70+ more startups run with us</p><div class="cases" data-cases></div><p class="s" data-i="valNote"></p></div>
+      <div class="sec c"><figure class="chapter-art chapter-art--scale" aria-hidden="true"><div class="provided-art"></div></figure><div class="eyw"><i class="ei" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i><div class="ey" data-i="scaleEy"></div></div><p class="portfolio-more">and 70+ more startups run with us</p><div class="cases" data-cases></div></div>
       <div class="sec c"><figure class="chapter-art chapter-art--global" aria-hidden="true"><div class="provided-art"></div></figure><div class="eyw"><i class="ei" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></i><div class="ey" data-i="globalEy"></div></div><h4 data-i="globalH"></h4>
         <div class="gpgrid" data-gpgrid></div>
         <button class="more" type="button" aria-expanded="false" data-more><span data-more-label></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -507,7 +529,11 @@ body{background:#0e2a5c}
           <li><i class="wi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg></i><div><b data-i="b2"></b><small data-i="b2s"></small></div></li>
           <li><i class="wi" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.3 10.8l7.4-3.6M8.3 13.2l7.4 3.6"/></svg></i><div><b data-i="b3"></b><small data-i="b3s"></small></div></li>
         </ul></div>
-      <p class="fine c" data-i="fine"></p>
+      <footer class="site-footer">
+        <p data-i="valNote"></p>
+        <p data-i="fine"></p>
+        <p class="copyright">© 2026 TAP Angel Partners. All rights reserved.</p>
+      </footer>
       <div class="fabw"><div class="fab">
         <a href="mailto:contact@tapaps.com" aria-label="Email us" title="Email us"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.8 6.5l8.2 6 8.2-6"/></svg></a>
         <a class="o" href="https://www.tapaps.com" target="_blank" rel="noopener" aria-label="Website" title="Website"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></a></div></div>
@@ -522,22 +548,22 @@ const T={
  en:{langBtn:'日本語',eyebrow:'',
   hero:"Your gateway to Korea's deep‑tech startups.",heroB:'Korean deep tech, backed early and scaled with corporates.',
   heroSub:'We invest early in Korean deep-tech founders and help them scale with leading corporates — at home and abroad.',
-  workEy:'Work with us and find opportunities',workH:'How can we work together?',
+  workEy:'<span class="title-muted">Work with us and</span> <span class="title-emphasis">find opportunities</span>',workH:'How can we work together?',
   b1:'Co-invest in Korea',b1s:'Deal flow from 77 portfolio companies and our TIPS pipeline',
   b2:'Land in Korea',b2s:'PoCs with 150+ corporates and soft-landing support in Korea',
   b3:'Partner on programs',b3s:'Join 60+ partners worldwide',
   kAum:'AUM',kFollow:'Portfolio raised follow-on',kAlumni:'Alumni follow-on (3 yrs)',kPort:'Portfolio companies',kPoc:'Corporate PoCs',kGlobal:'Global partners',
-  backedEy:'',backedH:'Government fund-of-funds and leading Korean corporates',backedS:'Tap a logo for details.',
-  scaleEy:'Scale-up Track record',valNote:'Valuation at latest financing round.',
-  globalEy:'',globalH:'60+ investors and innovation partners in all regions',
+  backedEy:'',backedH:'<span class="title-muted">Government fund-of-funds and leading</span> <span class="title-emphasis">Korean corporates</span>',backedS:'Tap a logo for details.',
+  scaleEy:'<span class="title-emphasis">Scale-up</span> <span class="title-muted">Track record</span>',valNote:'Portfolio valuations reflect the latest financing round.',
+  globalEy:'',globalH:'<span class="title-emphasis">60+ investors</span> <span class="title-muted">and innovation partners in all regions</span>',
   oiEy:'Open innovation',oiH:'189 corporate PoCs with 150+ partners',
   oi1:'<b>Hyundai Motor Group</b> — ZER01NE accelerator tracks',oi2:'<b>CJ ENM, LS Electric</b> — corporate open-innovation funds',oi3:'<b>Korea Tourism Organization</b> — 20 corporates, 29 PoCs in 2026',
   moreOpen:'View all 60+ partners by region',moreClose:'Show less',tInv:'Invest',tOi:'Open innovation',tNet:'Network',rAsia:'Asia',rNa:'N. America',rEu:'Europe',rMe:'Middle East',
   ctEy:'Contact',hq:'HQ: Incheon Startup Park, Incheon, Korea · Offices in Seoul, Busan, Gyeongnam',email:'Email us',web:'Website',
-  fine:'Figures as of Sep 2026 (TAP internal data). KRW converted at 1 USD = ₩1,328 (Oct 20, 2026) and rounded.',
+  fine:'Figures as of September 2026 (TAP internal data). KRW converted at USD 1 = KRW 1,328 (October 20, 2026); figures may be rounded.',
   scale:[['M.O.P','Liquid ceramics for 3D printing',80e9],['Cinnamon Lab','Functional food ingredients',36.5e9],['Mobilwithus','Vehicle cybersecurity',20e9],['ASET','Solid-state battery electrolytes',18e9]],
-  lp:{KVIC:['Korea Venture Investment Corp. (KVIC)','Manages the Korea Fund of Funds, the government\'s flagship venture fund-of-funds. LP in our deep-tech and Incheon funds.'],
-      APFS:['Agricultural Policy Insurance & Finance Service','Government agency running Korea\'s agri-food fund-of-funds. LP in our Agri-Food Open Innovation Fund ({u:8000000000}).'],
+  lp:{KVIC:['Korea Venture Investment Corp.<br>KVIC','Manages the Korea Fund of Funds, the government\'s flagship venture fund-of-funds. LP in our deep-tech and Incheon funds.'],
+      APFS:['Agricultural Policy Insurance<br>& Finance Service','Government agency running Korea\'s agri-food fund-of-funds. LP in our Agri-Food Open Innovation Fund ({u:8000000000}).'],
       CJENM:['CJ ENM','Leading Korean media and commerce company of CJ Group. LP in our K-Lifestyle Open Innovation Fund ({u:10900000000}), with sales channels via CJ OnStyle.'],
       COSMECCA:['COSMECCA Korea','KOSDAQ-listed cosmetics ODM manufacturer. LP in our K-Lifestyle Open Innovation Fund, supporting product development and manufacturing.'],
       LSElectric:['LS Electric','Power and automation company of LS Group (KOSPI). LP in our ESG Open Innovation Fund ({u:4000000000}).']}}
@@ -585,7 +611,7 @@ function buildLpList(scr,D){scr.querySelectorAll('[data-lplist]').forEach(w=>{
     
     ks.forEach(k=>{const d=D.lp[k];const r=document.createElement('button');r.type='button';r.className='lprow';r.dataset.k=k;r.setAttribute('aria-expanded',open.has(k)?'true':'false');
       r.innerHTML='<span class="hd"><span class="tx"><b></b></span><span class="lgbox"></span><span class="chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></span><span class="ds"></span>';
-      r.querySelector('.lgbox').appendChild(logoImg(k,88,k==='CJENM'?28:22));r.querySelector('.tx b').textContent=d[0];r.querySelector('.ds').textContent=fill(d[1]);
+      r.querySelector('.lgbox').appendChild(logoImg(k,88,k==='CJENM'?28:22));r.querySelector('.tx b').innerHTML=d[0];r.querySelector('.ds').textContent=fill(d[1]);
       r.addEventListener('click',ev=>{ev.stopPropagation();r.setAttribute('aria-expanded',r.getAttribute('aria-expanded')==='true'?'false':'true');});
       w.appendChild(r);});});});}
 function setMoreLabels(){document.querySelectorAll('[data-more]').forEach(b=>{const D=T[b.closest('[data-screen]').getAttribute('lang')||'en'];b.querySelector('[data-more-label]').textContent=b.getAttribute('aria-expanded')==='true'?D.moreClose:D.moreOpen;});}
@@ -597,7 +623,7 @@ function render(){
     scr.querySelectorAll('[data-i]').forEach(e=>{const v=D[e.dataset.i];if(v!==undefined)e.innerHTML=v;});
     scr.querySelectorAll('[data-lang-btn]').forEach(b=>{b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>'+D.langBtn;b.setAttribute('aria-label',lang==='ja'?'Switch to English':'日本語に切り替え');});
     scr.querySelectorAll('[data-scale-table]').forEach(tb=>{tb.innerHTML='';D.scale.forEach(([n,d,k])=>{const tr=tb.insertRow();tr.innerHTML='<td><b></b><small></small></td><td class="r"></td>';tr.querySelector('b').textContent=n;tr.querySelector('small').textContent=d;tr.cells[1].textContent=usd(k);});});
-    scr.querySelectorAll('[data-cases]').forEach(c=>{c.innerHTML='';D.scale.forEach(([n,d,k])=>{const el=document.createElement('div');el.className='case';el.innerHTML='<div class="cl"></div><b></b><span></span>';el.querySelector('.cl').textContent=n;el.querySelector('b').textContent=usd(k);el.querySelector('span').textContent=d;c.appendChild(el);});});
+    scr.querySelectorAll('[data-cases]').forEach(c=>{c.innerHTML='';D.scale.forEach(([n,d,k])=>{const el=document.createElement('div');el.className='case';el.innerHTML='<div class="cl"></div><b></b><span></span>';const logo=CASELOGO[n];if(logo&&LOGOS[logo])el.querySelector('.cl').appendChild(logoImg(logo,96,26,'case-logo'));else el.querySelector('.cl').textContent=n;el.querySelector('b').textContent=usd(k);el.querySelector('span').textContent=d;c.appendChild(el);});});
   });
   document.querySelectorAll('[data-usd]').forEach(e=>e.textContent=usd(+e.dataset.usd));
   setMoreLabels();
@@ -679,7 +705,7 @@ function initChapterNavigation(){
 }
 function initOrganicExperience(){
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const targets=[...document.querySelectorAll('.site-hero,.sec,.fine')];
+  const targets=[...document.querySelectorAll('.site-hero,.sec,.site-footer')];
   targets.forEach(el=>{
     el.classList.add('organic-reveal');
     el.querySelectorAll('.case,.lprow,.wl li').forEach((item,index)=>item.style.setProperty('--organic-index',index));
