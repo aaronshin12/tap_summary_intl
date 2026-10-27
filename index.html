@@ -550,6 +550,12 @@ body{background:#0e2a5c}
 .site-hero .entry-brand h2 .title-muted,.site-hero .entry-brand h2 .title-emphasis{color:rgba(255,255,255,.5)}
 .site-hero .entry-brand img{transform:none}
 .founder-message{width:100%;max-width:410px;margin:2px auto 0;color:rgba(255,255,255,.86);font-size:14px;font-weight:500;line-height:1.65;letter-spacing:-.01em;text-align:center;text-wrap:pretty}
+.site-hero .entry-brand .kgrid{display:grid;grid-template-columns:1fr;gap:10px}
+.site-hero .entry-brand .kgrid>div{display:grid;grid-template-columns:minmax(72px,auto) minmax(0,1fr) 28px;align-items:center;gap:14px;min-height:64px;padding:12px 16px}
+.site-hero .entry-brand .kgrid .kr{display:contents}
+.site-hero .entry-brand .kgrid b{grid-column:1;grid-row:1;margin:0;font-size:clamp(29px,7.5vw,36px);line-height:1}
+.site-hero .entry-brand .kgrid span{grid-column:2;grid-row:1;margin:0;font-size:13px;text-align:left}
+.site-hero .entry-brand .kgrid .ki{grid-column:3;grid-row:1;justify-self:end}
 .screen>.sec>h4,.screen>.sec:has([data-i=scaleEy])>.eyw .ey,.screen>.sec:has([data-i=workEy])>.c>.eyw .ey{font-size:clamp(36.25px,9.5vw,48.75px);letter-spacing:-.035em}
 .screen>.sec:has([data-i=scaleEy])>.eyw,.screen>.sec:has([data-i=workEy])>.c{transform:translateY(-24px)}
 .entry-action,.chapter-nav,.chapter-progress,.deck-continue{display:none!important}
